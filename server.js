@@ -11,11 +11,7 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, 'build')));
 
-app.get('/pets', (req, res) => {
-  if (process.env.NODE_ENV === 'development') {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-  }
-
+app.get('/api/pets', (req, res) => {
   return http.get(`http://api.petfinder.com/pet.find?key=${process.env.PETFINDER_API_KEY}&location=80526&format=json&animal=dog`, response => {
     let rawData = '';
     response.on('data', (chunk) => {

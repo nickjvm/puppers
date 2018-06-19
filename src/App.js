@@ -11,7 +11,7 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const request = await fetch('http://localhost:8080/pets');
+    const request = await fetch('/api/pets');
     const response = await request.json()
     const pet = response.pets.pet[0];
     const photos = pet.media.photos.photo.reduce((acc, arr) => {
