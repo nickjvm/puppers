@@ -5,38 +5,38 @@ A simple app consuming the PetFinder API.
 ## Goals
 
 ### Tech
-☐ Consume a public API
-☐ Successfully set up [create-react-app](https://github.com/facebook/create-react-app)
-  ☐ Eject if needed to customize
-☐ Setup express server for API proxy
-  ☐ Watch for changes with [nodemon](https://www.npmjs.com/package/nodemon)
-  ☐ resolve any [CORS](https://github.com/expressjs/cors) issues
-  ☐ Normalize remote API data
-☐ Use native fetch
-  ☐ Create `fetch` helper for ease of use
-☐ Store app data in redux (thunk, mobx, saga TBD)
-  ☐ Understand difference between app state and ephemeral state, and when to use each
-☐ Implement [server-side rendering](https://medium.com/bucharestjs/upgrading-a-create-react-app-project-to-a-ssr-code-splitting-setup-9da57df2040a)
-☐ [Code splitting](https://serverless-stack.com/chapters/code-splitting-in-create-react-app.html)
-☐ SPA routing with [React Router v4](https://www.npmjs.com/package/react-router)
-☐ Set open graph meta data
-☐ Unit testing (server and app) with [Jest](https://www.npmjs.com/package/jest-cli)
-☐ CI deployment to Github pages, Heroku, Now.sh
-☐ Well-documented component [PropTypes](https://www.npmjs.com/package/prop-types)
-☐ Component/App documentation and comments throughout
-☐ Understand create-react-app Webpack config
-☐ Use SCSS or "CSS in JS" for styling
-☐ Proper error handling (server & client)
-☐ Componetize as necessary
-☐ Use yarn as dependency manager
-☐ Use async / await
+- Consume a public API :white_circle:
+- Successfully set up [create-react-app](https://github.com/facebook/create-react-app) :white_circle:
+  - Eject if needed to customize :white_circle:
+- Setup express server for API proxy :white_circle:
+  - Watch for changes with [nodemon](https://www.npmjs.com/package/nodemon) :white_circle:
+  - resolve any [CORS](https://github.com/expressjs/cors) issues :white_circle:
+  - Normalize remote API data :white_circle:
+- Use native fetch :white_circle:
+  - Create `fetch` helper for ease of use :white_circle:
+- Store app data in redux (thunk, mobx, saga TBD) :white_circle:
+  - Understand difference between app state and ephemeral state, and when to use each :white_circle:
+- Implement [server-side rendering](https://medium.com/bucharestjs/upgrading-a-create-react-app-project-to-a-ssr-code-splitting-setup-9da57df2040a)
+- [Code splitting](https://serverless-stack.com/chapters/code-splitting-in-create-react-app.html) :white_circle:
+- SPA routing with [React Router v4](https://www.npmjs.com/package/react-router) :white_circle:
+- Set open graph meta data :white_circle:
+- Unit testing (server and app) with [Jest](https://www.npmjs.com/package/jest-cli) :white_circle:
+- Well-documented component [PropTypes](https://www.npmjs.com/package/prop-types) :white_circle:
+- Component/App documentation and comments throughout :white_circle:
+- Understand create-react-app Webpack config :white_circle:
+- Use SCSS or "CSS in JS" for styling :white_circle:
+- Proper error handling (server & client) :white_circle:
+- Componetize as necessary :white_circle:
+- Use yarn as dependency manager :white_circle:
+- Use async / await :white_circle:
+- CI deployment to Github pages, Heroku, Now.sh :shipit:
 
 ### UI
-☐ Search/filter results
-☐ Use [geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation) to initialize request
-☐ Save favorites to localStorage
-☐ list results and view individual pet profile
-☐ Responsive
+- Search/filter results :white_circle:
+- Use [geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation) to initialize request :white_circle:
+- Save favorites to localStorage :white_circle:
+- list results and view individual pet profile :white_circle:
+- Responsive :white_circle:
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
