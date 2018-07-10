@@ -8,7 +8,7 @@ A simple app consuming the PetFinder API.
 - Consume a public API :white_circle:
 - Successfully set up [create-react-app](https://github.com/facebook/create-react-app) :white_circle:
   - Eject if needed to customize :white_circle:
-- Configur Eslint :white_circle:
+- Configure Eslint :white_circle:
 - Setup express server for API proxy :white_circle:
   - Watch for changes with [nodemon](https://www.npmjs.com/package/nodemon) :white_circle:
   - resolve any [CORS](https://github.com/expressjs/cors) issues :white_circle:
