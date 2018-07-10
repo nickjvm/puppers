@@ -1,18 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  state = {
+    pets: []
+  }
+
+  componentWillMount() {
+    fetch('/pets').then(results => {
+      return results.json();
+    }).then(myJason => {
+      this.setState({ pets: myJason.pets.pet })
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <ul>
+          {this.state.pets.map(pet => (
+            <li key={pet.id.$t}>
+              <div>{pet.name.$t}</div>
+              <div>
+              <img src={pet.media.photos.photo.filter(image => {
+                return image['@size'] === 'pn'
+              })[0].$t}/>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     );
   }
