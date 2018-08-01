@@ -1,15 +1,22 @@
 import * as types from "./actions";
 
 const initialState = {
-  results: []
+  results: [],
+  location: ""
 };
 
-export default function searchReducer(state = initialState, { type, payload }) {
-  switch (type) {
+export default function searchReducer(state = initialState, action) {
+  switch (action.type) {
     case types.STORE_SEARCH_RESULTS: {
       return {
         ...state,
-        results: payload
+        results: action.payload
+      };
+    }
+    case types.SET_SEARCH_PARAMS: {
+      return {
+        ...state,
+        [action.key]: action.value
       };
     }
     default: {

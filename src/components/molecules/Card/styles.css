@@ -1,0 +1,52 @@
+.card {
+  width: 50%;
+  padding: 10px;
+}
+
+@media (min-width: 769px) {
+  .card {
+    width: 33%;
+  }
+}
+
+@media (min-width: 925px) {
+  .card {
+    width: 25%;
+  }
+}
+
+.card--inner {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.card--inner:hover .image--content {
+  filter: brightness(110%);
+  transform: scale(1.03);
+}
+.image {
+  overflow: hidden;
+}
+.image--content {
+  width: 100%;
+  padding-top: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: all 0.3s;
+}
+
+.meta {
+  margin: 0;
+  background: #e3e3e3;
+  border-radius: 100% 100% 0 0;
+  margin-top: -20px;
+  padding: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.meta h4 {
+  margin: 0;
+}
