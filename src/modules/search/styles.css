@@ -1,0 +1,9 @@
+.results {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.results li {
+  padding: 10px;
+}
