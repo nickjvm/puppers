@@ -17,7 +17,7 @@ app.get('/ping', function (req, res) {
 });
 
 app.get('/pets', function (req, res) {
- return http.get(`http://api.petfinder.com/pet.find?format=json&location=80525&animal=dog&key=${process.env.PETFINDER_API_KEY}`, response => {
+ return http.get(`http://api.petfinder.com/pet.find?format=json&location=${req.query.location}&animal=dog&key=${process.env.PETFINDER_API_KEY}`, response => {
      let rawData = ''
      response.on('data', (chunk) => {
          rawData += chunk;
