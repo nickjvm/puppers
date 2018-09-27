@@ -1,10 +1,11 @@
+const normalizer = require('./src/helpers/normalizer');
 const express = require('express');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 const http = require('http');
 const dotenv = require('dotenv');
-var cors = require('cors')
+var cors = require('cors');
 
 app.use(cors())
 app.use(express.static(path.join(__dirname, 'build')));
@@ -24,8 +25,7 @@ app.get('/pets', function (req, res) {
      response.on('end', () =>{
          try {
          const parsedData = JSON.parse(rawData)
-         console.log(parsedData);
-         res.send(parsedData.petfinder);
+         res.send(normalizer(parsedData.petfinder));
          } catch(e) {
              console.log(e.message);
 
