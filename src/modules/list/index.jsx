@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import * as Actions from './actions';
 
 class ListPuppers extends Component {
-
   fetchData = () => {
     fetch(`/pets?location=${this.props.location}`).then(results => {
       return results.json();
@@ -19,7 +18,22 @@ class ListPuppers extends Component {
 
   componentWillMount() {
     navigator.geolocation.getCurrentPosition((position) => {
-      this.props.storeCoordinates(position.coords);
+      fetch(`/location?lat=${position.coords.latitude}&lng=${position.coords.longitude}`).then(results => {
+        return results.json();
+      }).then(myJason => {
+       let locationResult = myJason.results[0].address_components.reduce((accumulator, currentValue) => {
+          if(currentValue.types.indexOf("postal_code") >= 0){
+            return currentValue.short_name 
+          }
+        })
+        let event = {
+          target : {
+            value: locationResult
+          }
+        }
+        this.props.setLocation(event)
+        this.fetchData();
+      })
     }, function errorCallback(error) {
       alert('ERROR(' + error.code + '): ' + error.message);
     }
@@ -35,7 +49,7 @@ class ListPuppers extends Component {
       <div>
         <br />
         <form onSubmit={this.onSubmit}>
-          <input placeholder="Enter your zip code here!" onChange={this.props.setLocation} type="search"></input>
+          <input placeholder="Enter your zip code here!" onChange={this.props.setLocation} type="search" value={this.props.location}/>
         </form>
         <ul>
           {this.props.pets.map(pet => (
@@ -53,7 +67,6 @@ class ListPuppers extends Component {
 }
 
 function mapStatetoProps(state) {
-  console.log(state, "state")
   return {
     pets: state.pets,
     location: state.location,
