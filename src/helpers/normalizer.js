@@ -1,7 +1,7 @@
 function normalizeData (data) {
     return {
-        lastOffset: data.lastOffset.$t,
-        pets: data.pets.pet.map(pet => {
+        lastOffset: data.lastOffset ? data.lastOffset.$t : 0,
+        pets: data.pets ? data.pets.pet.map(pet => {
             return {
                 name: pet.name.$t,
                 image: pet.media.photos.photo.filter(image => {
@@ -9,7 +9,7 @@ function normalizeData (data) {
                   })[0].$t,
                 id: pet.id.$t
             }
-        })
+        }) : []
     }
 }
 

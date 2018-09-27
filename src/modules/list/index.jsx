@@ -23,7 +23,7 @@ class ListPuppers extends Component {
       }).then(myJason => {
        let locationResult = myJason.results[0].address_components.reduce((accumulator, currentValue) => {
           if(currentValue.types.indexOf("postal_code") >= 0){
-            return currentValue.short_name 
+            return currentValue.short_name
           }
         })
         let event = {
