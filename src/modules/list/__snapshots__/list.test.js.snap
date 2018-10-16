@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`list renders a list of pets 1`] = `
+<div>
+  <br />
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      onChange={undefined}
+      placeholder="Enter your zip code here!"
+      type="search"
+      value={undefined}
+    />
+  </form>
+  <ul>
+    <li>
+      <div>
+        nick
+      </div>
+      <div>
+        <img
+          src="an iced tea"
+        />
+      </div>
+    </li>
+  </ul>
+</div>
+`;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as Actions from './actions';
 
-class ListPuppers extends Component {
+export class ListPuppers extends Component {
   fetchData = () => {
     fetch(`/pets?location=${this.props.location}`).then(results => {
       return results.json();
@@ -17,7 +17,7 @@ class ListPuppers extends Component {
   }
 
   componentWillMount() {
-    navigator.geolocation.getCurrentPosition((position) => {
+    global.window.navigator.geolocation.getCurrentPosition((position) => {
       fetch(`/location?lat=${position.coords.latitude}&lng=${position.coords.longitude}`).then(results => {
         return results.json();
       }).then(myJason => {
