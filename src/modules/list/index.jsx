@@ -25,6 +25,7 @@ class ListPuppers extends Component {
           if(currentValue.types.indexOf("postal_code") >= 0){
             return currentValue.short_name
           }
+          return accumulator
         })
         let event = {
           target : {
@@ -56,7 +57,7 @@ class ListPuppers extends Component {
             <li key={pet.id}>
               <div>{pet.name}</div>
               <div>
-                <img src={pet.image} />
+                <img src={pet.image} alt={pet.name} />
               </div>
             </li>
           ))}
